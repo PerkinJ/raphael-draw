@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>多边形绘制</title>
+<style type="text/css">
+#main,
+.canvas {
+	width: 500px;
+	height: 500px;
+	overflow: hidden;
+	background: #ccc;
+}
+
+
+.canvas {
+	position: relative;
+}
+.bg-container,
+.layers-container,
+.svg-mask {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+</style>
+</head>
+<body>
+<div id="main"></div>
+<script type="text/javascript" src="../lib/raphael.js"></script>	
+<script type="text/javascript" src="../lib/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="../dist/main.js"></script>
+<script type="text/javascript">
+var c = new Canvas("#main")
+c.switch("polygon")
+
+c.bind("polygon:beforestart", function(){
+    c.clear()
+})
+
+c.bind("polygon:pointerror", function(){
+    console.log(arguments)
+})
+
+c.bind("propschange", function(name, value){
+    console.log(name, value, "propschange")
+})
+
+c.bind("shapes", function(shape){
+    console.log(shape, "shapes")
+})
+
+// 禁用
+// c.set("isDisabled", true)
+
+c.add({
+    type: "polygon",
+    points: [
+        {x:1, y:1},
+        {x:300, y:1},
+        {x:300, y:100},
+        {x:1, y:100},
+    ],
+    attr: {
+        fill: "rgba(179, 29, 29,0.2)"
+    },
+})
+
+
+</script>
+</body>
+</html>
