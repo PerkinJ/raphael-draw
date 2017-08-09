@@ -25,14 +25,23 @@
 	top: 0;
 	left: 0;
 }
-
+.wrap{
+    margin:0 auto;
+    width:600px;
+}
 </style>
 </head>
 <body>
-<div id="main"></div>
-<script type="text/javascript" src="../lib/raphael.js"></script>	
-<script type="text/javascript" src="../lib/jquery-3.2.1.js"></script>
-<script type="text/javascript" src="../dist/main.js"></script>
+<div class="wrap">  
+    <h2>
+        请在下面画布中，画多边形。
+    </h2>
+    <div id="main"></div>
+</div>
+
+<script type="text/javascript" src="./lib/raphael.js"></script>	
+<script type="text/javascript" src="./lib/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="./dist/main.js"></script>
 <script type="text/javascript">
 var c = new Canvas("#main")
 c.switch("polygon")
