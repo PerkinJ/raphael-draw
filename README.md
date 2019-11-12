@@ -1,4 +1,4 @@
-### 本项目主要使用raphel.js+ES6来做了一个画多边形工具，利用rollup来打包.主要用在了之前的项目中，用来标注图片信息。
+### 本项目主要使用raphel.js+ES6来做了一个画多边形工具，利用rollup来打包。
 ### build cmd
 ```
 rollup -c rollup.config.js
